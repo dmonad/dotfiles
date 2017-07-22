@@ -1,5 +1,9 @@
 " sane tab default
 set tabstop=2 smartindent shiftwidth=2 expandtab
+" enable switching buffers that have been changed
+set hidden
+" who cares about case is searches?
+set ic
 
 set backup             " keep a backup file (restore to previous version)
 set undofile           " keep an undo file (undo changes after closing)
@@ -104,6 +108,8 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'mileszs/ack.vim'
+
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
 
@@ -123,7 +129,8 @@ highlight clear ALEWarningSign
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '--'
-
+let g:ale_sign_column_always = 1
+let g:ale_linters = { 'javascript': ['standard'] }
 
 
 " Vim Airline Config!
@@ -134,18 +141,18 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-
+" let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+" let g:javascript_conceal_arrow_function       = "⇒"
+" let g:javascript_conceal_noarg_arrow_function = "🞅"
+" let g:javascript_conceal_underscore_arrow_function = "🞅"
+ 
 set conceallevel=1
 highlight clear Conceal

@@ -13,9 +13,10 @@ set directory=~/.nvimbackup/
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
 
-
 " Jump using fzf
 noremap <C-s> <ESC>:FZF<CR>
+" Make!
+noremap <C-m> <ESC>:wa<CR>:make<CR>
 " Terminal exit using esc
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -109,6 +110,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'mileszs/ack.vim'
+
+Plug 'lervag/vimtex'
 
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
